@@ -9,6 +9,7 @@ Flask==0.12.2
 Flask-RESTful==0.3.6
 flask-restplus==0.10.1
 Flask-SQLAlchemy==2.2
+psycopg2==2.7.1
 functools32==3.2.3.post2
 idna==2.5
 inflection==0.3.1
