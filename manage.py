@@ -3,7 +3,6 @@
 
 import unittest
 import coverage
-import SQLAlchemy
 import flask_sqlalchemy
 
 from flask_script import Manager
