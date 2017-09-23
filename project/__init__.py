@@ -3,8 +3,7 @@
 
 import os
 from flask import Flask, jsonify
-from flask_SQLAlchemy import SQLAlchemy
-
+from flask_sqlalchemy import SQLAlchemy
 
 # instantiate the db
 db = SQLAlchemy()
