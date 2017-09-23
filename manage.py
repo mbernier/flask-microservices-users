@@ -1,5 +1,6 @@
 # manage.py
 
+
 import unittest
 import coverage
 
@@ -7,6 +8,7 @@ from flask_script import Manager
 
 from project import create_app, db
 from project.api.models import User
+
 
 COV = coverage.coverage(
     branch=True,
@@ -17,8 +19,10 @@ COV = coverage.coverage(
 )
 COV.start()
 
+
 app = create_app()
 manager = Manager(app)
+
 
 @manager.command
 def test():
@@ -28,6 +32,7 @@ def test():
     if result.wasSuccessful():
         return 0
     return 1
+
 
 @manager.command
 def cov():
@@ -44,12 +49,14 @@ def cov():
         return 0
     return 1
 
+
 @manager.command
 def recreate_db():
     """Recreates a database."""
     db.drop_all()
     db.create_all()
     db.session.commit()
+
 
 @manager.command
 def seed_db():
