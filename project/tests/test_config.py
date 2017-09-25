@@ -24,6 +24,7 @@ class TestDevelopmentConfig(TestCase):
             app.config['SQLALCHEMY_DATABASE_URI'] ==
             os.environ.get('DATABASE_URL')
         )
+        self.assertFalse(app.config['SQLALCHEMY_TRACK_MODIFICATIONS'])
 
 
 class TestTestingConfig(TestCase):
@@ -40,6 +41,7 @@ class TestTestingConfig(TestCase):
             app.config['SQLALCHEMY_DATABASE_URI'] ==
             os.environ.get('DATABASE_TEST_URL')
         )
+        self.assertFalse(app.config['SQLALCHEMY_TRACK_MODIFICATIONS'])
 
 
 class TestProductionConfig(TestCase):
